@@ -60,8 +60,8 @@ all: main-build
 main-build: AD2S83.elf secondary-outputs
 
 # Tool invocations
-AD2S83.elf AD2S83.map: $(OBJS) $(USER_OBJS) D:\STM32Cube\STM32CubeIDE_1.0.0\workspace_1.0.0\AD2S83\STM32G030C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "AD2S83.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"D:\STM32Cube\STM32CubeIDE_1.0.0\workspace_1.0.0\AD2S83\STM32G030C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AD2S83.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+AD2S83.elf AD2S83.map: $(OBJS) $(USER_OBJS) F:\05_Project_Design\42_AD2S83\Code\AD2S83\STM32G030C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "AD2S83.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"F:\05_Project_Design\42_AD2S83\Code\AD2S83\STM32G030C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AD2S83.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

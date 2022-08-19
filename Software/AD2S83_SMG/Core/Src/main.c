@@ -112,6 +112,11 @@ int main(void)
 
 	Deg = AD2S83_Decode_Data_Average(300);
 
+	//deg calibration
+	Deg = Deg + 65;
+	if(Deg > 360)
+		Deg -= 360;
+
 	//Deg to Deg Min Sec
 
 	Deg_Int = (int)Deg;
